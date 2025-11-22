@@ -221,3 +221,43 @@ button:hover {
     .section { padding: 50px 20px; }
     .music-player { width: 120px; bottom: 15px; right: 10px; opacity: 0.8; }
 }
+/* --- ESTILO DEL TEMPORIZADOR --- */
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Espacio entre números */
+    margin-top: 40px;
+    border-top: 1px solid rgba(255,255,255,0.3); /* Línea sutil arriba */
+    padding-top: 20px;
+}
+
+.time-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.countdown .number {
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem;
+    color: var(--primary-color); /* Dorado */
+    font-weight: bold;
+    line-height: 1;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.countdown .label {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,0.8);
+    margin-top: 5px;
+}
+
+/* Ajuste para celular */
+@media (max-width: 600px) {
+    .countdown { gap: 15px; margin-top: 25px; }
+    .countdown .number { font-size: 1.8rem; }
+    .countdown .label { font-size: 0.6rem; }
+}

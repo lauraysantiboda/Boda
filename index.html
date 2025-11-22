@@ -155,11 +155,28 @@
 </head>
 <body>
 
-    <div class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('unnamed.jpg');">
+   <div class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('unnamed.jpg');">
         <p>NOS CASAMOS</p>
         <h1>Lau & Santi</h1>
-        <p>12 . FEBRERO . 2026</p>
-    </div>
+        <p>12 . FEBRERO . 2026</p> <div id="countdown" class="countdown">
+            <div class="time-box">
+                <span id="days" class="number">00</span>
+                <span class="label">Días</span>
+            </div>
+            <div class="time-box">
+                <span id="hours" class="number">00</span>
+                <span class="label">Hs</span>
+            </div>
+            <div class="time-box">
+                <span id="minutes" class="number">00</span>
+                <span class="label">Min</span>
+            </div>
+            <div class="time-box">
+                <span id="seconds" class="number">00</span>
+                <span class="label">Seg</span>
+            </div>
+        </div>
+        </div>
 
     <div class="section">
         <h2>Nuestra Historia</h2>
@@ -229,7 +246,7 @@
     </div>
 
     <div class="section" style="font-size: 0.8rem; padding-bottom: 80px;">
-        <p>Con amor, Lau & Santi</p>
+        <p>CON AMOR, LAU & SANTI</p>
     </div>
 
    <audio id="wedding-music" loop>
@@ -260,5 +277,34 @@
     </script>
     
 <link rel="stylesheet" href="style.css">
+<script>
+        // FECHA OBJETIVO: 12 de Febrero de 2026 a las 00:00:00
+        // Nota: Los meses en JS van de 0 a 11. Enero=0, Febrero=1.
+        const weddingDate = new Date(2026, 1, 12, 0, 0, 0).getTime();
+
+        const timer = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            // Cálculos matemáticos para días, horas, minutos y segundos
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Mostrar el resultado en los elementos HTML
+            document.getElementById("days").innerText = days;
+            document.getElementById("hours").innerText = hours;
+            document.getElementById("minutes").innerText = minutes;
+            document.getElementById("seconds").innerText = seconds;
+
+            // Si la cuenta termina
+            if (distance < 0) {
+                clearInterval(timer);
+                document.getElementById("countdown").innerHTML = "<h2 style='color:white;'>¡Llegó el Gran Día!</h2>";
+            }
+        }, 1000);
+    </script>
+</body>
 </body>
 </html>
