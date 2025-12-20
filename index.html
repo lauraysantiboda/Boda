@@ -158,7 +158,8 @@
    <div class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('unnamed.jpg');">
         <p>NOS CASAMOS</p>
         <h1>Lau & Santi</h1>
-        <p>12 . FEBRERO . 2026</p> <div id="countdown" class="countdown">
+        <p>12 . FEBRERO . 2026</p>
+        <P>11:00 AM</P> <div id="countdown" class="countdown">
             <div class="time-box">
                 <span id="days" class="number">00</span>
                 <span class="label">Días</span>
@@ -191,32 +192,41 @@
         </div>
     </div>
 
-    <div class="section">
-        <h2>Detalles del Evento</h2>
-        <div class="divider"></div>
-        
-        <div class="details-grid">
-            <div class="detail-card">
-                <h3>📍 Ceremonia y Recepción</h3>
-                <p>San Juan de la Tasajera</p>
-                <p>Copacabana, Antioquia</p>
-                
-               <iframe 
-    width="100%" 
-    height="300" 
-    frameborder="0" 
-    scrolling="no" 
-    marginheight="0" 
-    marginwidth="0" 
-    src="https://maps.google.com/maps?q=San+Juan+de+la+Tasajera+Copacabana&hl=es&z=16&output=embed">
-</iframe>
+   <div class="section">
+    <h2>Detalles del Evento</h2>
+    <div class="divider"></div>
+    
+    <div class="details-grid">
+        <div class="detail-card">
+            <h3>📍 Ceremonia y Recepción</h3>
+            <p style="font-weight: bold; color: var(--heading-color);">Parroquia de Emaus</p>
+            <p>Cra. 81 #53a-40, Ferrini, Medellín</p>
+            
+            <iframe 
+                width="100%" 
+                height="300" 
+                frameborder="0" 
+                scrolling="no" 
+                marginheight="0" 
+                marginwidth="0" 
+                src="https://maps.google.com/maps?q=Parroquia+de+Emaus+Medellin&z=16&output=embed">
+            </iframe>
+            
+            <p style="margin-top:15px; font-size: 0.8rem;">
+                <a href="https://www.google.com/maps/search/?api=1&query=Parroquia+de+Emaus+Medellin" target="_blank" style="color:var(--heading-color); text-decoration: underline;">
+                    Abrir ubicación en Google Maps
+                </a>
+            </p>
+        </div>
 
+        </div>
+</div>
             <div class="detail-card">
                 <h3>👗 Código de Vestimenta</h3>
                 <p><strong>Etiqueta del Evento</strong></p>
                 <hr style="border: 0; border-top: 1px dashed #ccc; margin: 15px 0;">
-                <p>💃 Mujeres: Vestido Largo</p>
-                <p>🕺 Hombres: Traje y corbata</p>
+                <p>💃 Mujeres: Cómo mejor te sientas</p>
+                <p>🕺 Hombres:Cómo mejor te sientas</p>
                 <p style="color: #888; font-size: 0.9rem;"><em>Reservado el color blanco para la novia.</em></p>
             </div>
         </div>
@@ -239,7 +249,7 @@
 
 
             <label>Mensaje (Opcional):</label>
-            <textarea name="mensaje" rows="3" placeholder="Alergias, canciones, felicitaciones..."></textarea>
+            <textarea name="mensaje" rows="3" placeholder="Alergias, canciones, felicitaci  ones..."></textarea>
 
             <button type="submit">Enviar Confirmación</button>
         </form>
@@ -278,21 +288,21 @@
     
 <link rel="stylesheet" href="style.css">
 <script>
-        // FECHA OBJETIVO: 12 de Febrero de 2026 a las 00:00:00
-        // Nota: Los meses en JS van de 0 a 11. Enero=0, Febrero=1.
-        const weddingDate = new Date(2026, 1, 12, 0, 0, 0).getTime();
+        // FECHA OBJETIVO: 12 de Febrero de 2026 a las 11:00 AM
+        // Formato: (Año, Mes [0=Enero, 1=Febrero], Día, Hora, Minutos, Segundos)
+        const weddingDate = new Date(2026, 1, 12, 11, 0, 0).getTime();
 
         const timer = setInterval(function() {
             const now = new Date().getTime();
             const distance = weddingDate - now;
 
-            // Cálculos matemáticos para días, horas, minutos y segundos
+            // Cálculos matemáticos
             const days = Math.floor(distance / (1000 * 60 * 60 * 24));
             const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-            // Mostrar el resultado en los elementos HTML
+            // Mostrar el resultado
             document.getElementById("days").innerText = days;
             document.getElementById("hours").innerText = hours;
             document.getElementById("minutes").innerText = minutes;
